@@ -1,25 +1,25 @@
 <template>
-  <div :class="{header: true, light: light}">
+  <header :class="{header: true, light: light}">
     <nuxt-link class="logo-container" to="/">
       <Logo :class="{logo: true, dark: light}" />
     </nuxt-link>
-    <HeaderNavigation class="nav"></HeaderNavigation>
-    <HeaderAccount class="account" :isLoggedIn="false" :avatar="'/images/profile.png'"></HeaderAccount>
-  </div>
+    <TheHeaderNavigation class="nav"></TheHeaderNavigation>
+    <TheHeaderAuth class="account" :isLoggedIn="false" :avatar="'/images/profile.png'"></TheHeaderAuth>
+  </header>
 </template>
 
 <script>
-import HeaderNavigation from "./HeaderNavigation";
-import HeaderAccount from "./HeaderAccount";
-import Logo from "@/assets/svg/logo.svg";
+import TheHeaderNavigation from "./TheHeaderNavigation";
+import TheHeaderAuth from "./TheHeaderAuth";
+import Logo from "@/assets/svgs/logo.svg";
 // import { mapGetters } from "vuex";
 
 export default {
-  name: "Header",
+  name: "TheHeader",
   components: {
     Logo,
-    HeaderNavigation,
-    HeaderAccount
+    TheHeaderNavigation,
+    TheHeaderAuth
   },
   data() {
     return {
@@ -40,7 +40,7 @@ export default {
   background-color: $black;
   color: $light;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   direction: rtl;
   height: $header-height;
   padding: $container-padding;
@@ -52,7 +52,7 @@ export default {
 }
 
 .logo {
-  margin-left: $header-logo-margin;
+  margin: $header-logo-margin;
   fill: $primary;
   height: $header-logo-height;
 
