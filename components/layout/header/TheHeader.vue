@@ -4,7 +4,7 @@
       <Logo :class="{logo: true, dark: light}" />
     </nuxt-link>
     <TheHeaderNavigation class="nav"></TheHeaderNavigation>
-    <TheHeaderAuth class="account" :isLoggedIn="false" :avatar="'/images/profile.png'"></TheHeaderAuth>
+    <TheHeaderAuth class="account" :isLoggedIn="true" :avatar="'/images/profile.png'"></TheHeaderAuth>
   </header>
 </template>
 

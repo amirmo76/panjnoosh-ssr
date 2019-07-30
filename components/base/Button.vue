@@ -17,6 +17,7 @@
       flat: flat
       }"
     :disabled="disabled"
+    v-ripple
   >
     <span class="icon">
       <slot name="icon"></slot>
@@ -67,10 +68,10 @@ export default {
 @import '~assets/styles/variables';
 
 .button 
-  border: none
-  font-family: inherit
-  font-size: $font-size
-  outline: none
+  border none
+  font-family inherit
+  font-size $font-size
+  outline none
   position relative
   z-index 1
   transition all .3s
@@ -82,7 +83,7 @@ export default {
     display flex
     align-items center
     fill $black
-  .icon:last-child
+  .icon:last-of-type
     margin-left 0
   &:hover
     cursor: pointer
@@ -164,6 +165,9 @@ export default {
     color $white
     .icon
       fill $white
+    &:hover
+    &:focus
+      background-color rgba($white, .05)
         
   &.round
     border-radius 50%

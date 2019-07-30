@@ -1,10 +1,10 @@
 <template>
   <nav>
-    <nuxt-link to="/shop" class="link">فروشگاه</nuxt-link>
-    <nuxt-link to="/#special-offers" class="link">پیشنهادات ویژه</nuxt-link>
-    <nuxt-link to="/blog" class="link">بلاگ</nuxt-link>
-    <nuxt-link to="/about" class="link">درباره ما</nuxt-link>
-    <nuxt-link to="/contact" class="link">ارتباط با ما</nuxt-link>
+    <nuxt-link to="/shop" class="link" v-ripple>فروشگاه</nuxt-link>
+    <nuxt-link to="/#special-offers" class="link" v-ripple>پیشنهادات ویژه</nuxt-link>
+    <nuxt-link to="/blog" class="link" v-ripple>بلاگ</nuxt-link>
+    <nuxt-link to="/about" class="link" v-ripple>درباره ما</nuxt-link>
+    <nuxt-link to="/contact" class="link" v-ripple>ارتباط با ما</nuxt-link>
   </nav>
 </template>
 
@@ -33,4 +33,4 @@ nav {
     color: $primary;
   }
 }
-</style>
+ </style>

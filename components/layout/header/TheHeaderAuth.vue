@@ -9,16 +9,16 @@
           <cart />
         </template>
       </Button>
-      <Button type="text" round color="white" size="sm" class="logout">
+      <Button type="text" round color="white" size="sm">
         <template #icon>
-          <logout />
+          <logout  class="logout"/>
         </template>
       </Button>
     </div>
 
     <div v-else class="flex">
-      <nuxt-link to="/register" class="link">ثبت نام</nuxt-link>
-      <nuxt-link to="/login" class="link">ورود</nuxt-link>
+      <nuxt-link to="/register" class="link" v-ripple>ثبت نام</nuxt-link>
+      <nuxt-link to="/login" class="link" v-ripple>ورود</nuxt-link>
     </div>
   </div>
 </template>
@@ -97,8 +97,5 @@ export default {
 
 .logout 
   transform rotate(180deg)
-  &:hover 
-    fill $primary
-    cursor pointer
 </style>
 

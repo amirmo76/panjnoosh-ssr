@@ -42,7 +42,9 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    {src:"~plugins/ripple.js", mode: 'client'}
+  ],
   /*
    ** Nuxt.js modules
    */
