@@ -4,8 +4,16 @@
       <nuxt-link to="/dashboard">
         <div class="avatar" :style="{backgroundImage: `url(${avatar})`}"></div>
       </nuxt-link>
-      <!-- <q-btn flat round icon="shopping_cart" class="cart" />
-      <q-btn flat round icon="logout" class="logout" @click="logout" />-->
+      <Button type="text" round color="white" size="sm" class="cart">
+        <template #icon>
+          <cart />
+        </template>
+      </Button>
+      <Button type="text" round color="white" size="sm" class="logout">
+        <template #icon>
+          <logout />
+        </template>
+      </Button>
     </div>
 
     <div v-else class="flex">
@@ -16,8 +24,17 @@
 </template>
 
 <script>
+import Button from '@/components/base/Button';
+import cart from "@/assets/svgs/cart.svg";
+import logout from "@/assets/svgs/logout.svg";
+
 export default {
   name: "TheHeaderAauth",
+  components: {
+    Button,
+    cart,
+    logout
+  },
   props: {
     isLoggedIn: {
       type: Boolean,
@@ -41,60 +58,47 @@ export default {
 <style lang="stylus" scoped>
 @import '~assets/styles/variables';
 
-.container {
-  display: flex;
-  align-items: stretch;
-}
+.container 
+  display flex
+  align-items stretch
 
-.flex {
-  display: flex;
-  align-items: center;
-}
+.flex 
+  display flex
+  align-items center
 
-.sign-icon {
-  fill: $white;
-  margin: $header-sign-icon-margin;
-}
+.sign-icon 
+  fill $white
+  margin $header-sign-icon-margin
 
-.link {
-  padding: $header-link-padding;
-  transition: all 0.2s;
-  display: block;
-  position: relative;
-  align-self: stretch;
-  display: flex;
-  align-items: center;
+.link 
+  padding $header-link-padding
+  transition all 0.2s
+  display block
+  position relative
+  align-self stretch
+  display flex
+  align-items center
+  &:hover 
+    color: $primary
 
-  &:hover {
-    color: $primary;
-  }
-}
+.avatar 
+  width $header-avatar-size
+  height $header-avatar-size
+  margin $header-avatar-margin
+  position relative
+  background-size cover
+  background-position center
+  border-radius $header-avatar-border-radius
+  &:hover
+    cursor pointer
 
-.avatar {
-  width: $header-avatar-size;
-  height: $header-avatar-size;
-  margin: $header-avatar-margin;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  border-radius: $header-avatar-border-radius;
+.cart 
+  margin $header-cart-margin
 
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.cart {
-  margin-left: $header-cart-margin;
-}
-
-.logout {
-  transform: rotate(180deg);
-
-  &:hover {
-    fill: $primary;
-    cursor: pointer;
-  }
-}
+.logout 
+  transform rotate(180deg)
+  &:hover 
+    fill $primary
+    cursor pointer
 </style>
 
